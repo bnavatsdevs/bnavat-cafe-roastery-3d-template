@@ -1,1 +1,78 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#111214" />
+  <title>NOIR &amp; CREMA — Artisanal Roastery &amp; Kitchen</title>
+  <meta
+    name="description"
+    content="Interactive 3D specialty cafe, micro-roastery, and artisanal kitchen experience. Explore seasonal pours, small-batch roasting, and book your table in seconds."
+  />
+  <meta property="og:title" content="NOIR &amp; CREMA — Artisanal Roastery &amp; Kitchen" />
+  <meta
+    property="og:description"
+    content="Crafted in Fire, Poured in Silence. Explore our 3D espresso bar &amp; roastery, curated menu in ₹, and instant WhatsApp reservations."
+  />
+  <meta property="og:type" content="website" />
+  <link
+    rel="icon"
+    type="image/svg+xml"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111214'/%3E%3Cpath d='M18 14h16c7.5 0 12 4.3 12 10.2 0 4.2-2.4 7.4-6.2 8.8 4.6 1.3 7.7 4.9 7.7 9.9C49.5 50 43.8 54 35 54H18V14zm8.5 7.5v8.2h7c3.2 0 5.3-1.7 5.3-4.2 0-2.5-2.1-4-5.3-4h-7zm0 15.2v9.8h8.2c3.7 0 6-1.8 6-4.9 0-3-2.3-4.9-6-4.9h-8.2z' fill='%23ff6a1a'/%3E%3C/svg%3E"
+  />
+
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/"
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="./styles/tokens.css" />
+  <link rel="stylesheet" href="./styles/base.css" />
+  <link rel="stylesheet" href="./styles/sections.css" />
+</head>
+<body>
+  <div id="preloader" class="preloader" aria-live="polite" aria-label="Loading 3D Roastery">
+    <div class="preloader__inner">
+      <span class="preloader__eyebrow" id="preloader-brand">NOIR &amp; CREMA</span>
+      <div class="preloader__bar-track">
+        <div class="preloader__bar-fill" id="preloader-bar" style="width: 0%;"></div>
+      </div>
+      <span class="preloader__percent" id="preloader-percent">0%</span>
+    </div>
+  </div>
+
+  <div id="navbar-root"></div>
+
+  <main id="top" class="page-shell">
+    <section id="hero" class="hero-stage" aria-label="Interactive 3D Espresso Bar and Roastery">
+      <div id="canvas-host" class="canvas-host" aria-hidden="false"></div>
+
+      <div id="webgl-fallback" class="webgl-notice hidden" role="status" aria-live="polite">
+        <div class="webgl-notice__card">
+          <p class="webgl-notice__title">3D Graphics Context Paused or Unavailable</p>
+          <p class="webgl-notice__copy">
+            Your browser paused or blocked WebGL rendering. You can still browse the menu, explore our craft, or reserve a table on WhatsApp.
+          </p>
+          <button type="button" class="btn btn--primary" id="restore-webgl-btn">Reload 3D Scene</button>
+        </div>
+      </div>
+
+      <div id="hero-overlay-root" class="hero-hud"></div>
+      <div id="hotspot-drawer-root" class="drawer-layer"></div>
+    </section>
+
+    <section id="menu-section-root" class="section section--menu" aria-label="Curated Seasonal Menu"></section>
+    <section id="craft-section-root" class="section section--craft" aria-label="Sensory Craft"></section>
+    <section id="visit-section-root" class="section section--visit" aria-label="Reservations and Location"></section>
+  </main>
+
+  <footer id="footer-root" class="site-footer"></footer>
+
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>
